@@ -1,0 +1,42 @@
+Demonstrate Docker image optimization using:
+
+A normal (single-stage) Dockerfile
+
+A multi-stage Dockerfile
+
+A distroless Dockerfile
+
+Each version should build and run a simple Node.js app that prints a message and runs on port 9000.
+
+⚙️ Instructions / Specifications:
+
+1️⃣ Project Setup
+• Folder Name → welcome-app
+• File → index.js
+
+2️⃣ Normal Dockerfile (Single-Stage Build)
+• File Name → Dockerfile.normal
+• Base Image → node:18
+• Container Name → node-fat
+• Expose → Port 9000
+• Description → Build and run in the same image (unoptimized, large image).
+
+3️⃣ Multi-Stage Dockerfile (Optimized Build)
+• File Name → Dockerfile.multi
+• Stage 1: Use node:18 as builder
+• Stage 2: Use node:18-slim for runtime
+• Container Name → node-slim
+• Expose → Port 9001
+• Description → Build in first stage, copy output to second (smaller) image.
+
+4️⃣ Distroless Dockerfile (Secure Runtime)
+• File Name → Dockerfile.distroless
+• Stage 1: Use node:18 for build
+• Stage 2: Use gcr.io/distroless/nodejs18-debian12 for runtime
+• Container Name → node-distroless
+• Expose → Port 9002
+• Description → Use distroless image for minimal, production-ready container.
+
+5️⃣ Verification Steps
+• Build and run each image separately.
+• Access the output using:

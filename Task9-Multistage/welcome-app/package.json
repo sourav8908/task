@@ -1,0 +1,11 @@
+{
+  "name": "welcome-app",
+  "version": "1.0.0",
+  "description": "Simple Node.js app for multi-stage and distroless Docker build demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "YourName",
+  "license": "ISC"
+}
