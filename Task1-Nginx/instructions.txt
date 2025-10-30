@@ -1,0 +1,5 @@
+•	Pull the official Nginx image.
+•	Run it in a container on port 7000.
+•	Check running containers and logs.
+•	Stop and remove the container.
+✅ Objective: Test basic Docker image and container operations.

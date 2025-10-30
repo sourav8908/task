@@ -1,0 +1,17 @@
+Pull the official MySQL image from Docker Hub.
+
+Run it in a detached container named mysql-test.
+
+Expose port 3306 to the host system.
+
+Use the following environment variables while running the container:
+
+MYSQL_ROOT_PASSWORD = my-secret-pw
+
+MYSQL_DATABASE = devops
+
+Verify it’s running using docker ps.
+
+View container logs to confirm MySQL started correctly.
+
+Stop and remove both the container and image.

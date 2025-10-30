@@ -1,0 +1,24 @@
+🎯 Objective:
+Demonstrate difference between container storage, Docker volumes, and host-mounted volumes — and verify persistence behavior.
+⚙️ Instructions / Specifications:
+1️⃣ Container Storage (Temporary)
+•	Image → ubuntu:latest
+•	Container → temp-storage-demo
+•	Create file → /data/tempfile.txt
+•	Remove container and recreate → file disappears.
+2️⃣ Docker Volume (Persistent)
+•	Volume Name → my_volume
+•	Container → volume-storage-demo
+•	Mount → my_volume:/appdata
+•	Create file → /appdata/persistent.txt
+•	Recreate container using same volume → file should still exist.
+3️⃣ Host Mount (Bind Mount)
+•	Host Folder → /home/user/docker_data or C:\docker_data
+•	Container → bind-mount-demo
+•	Mount → Host folder ↔ /mnt/data
+•	Create file hostfile.txt and verify live sync between host and container.
+✅ Expected Output:
+•	docker volume ls shows my_volume
+•	Data inside my_volume remains after removal
+•	Host mount sync verified both directions
+•	Volume inspect shows mount path (e.g., /var/lib/docker/volumes/my_volume/_data)

@@ -1,0 +1,94 @@
+🎯 Objective:
+
+Deploy and run a two-tier Flask + MySQL application using Docker Compose.
+The Flask app should connect to MySQL through a custom bridge network, and both services should be managed entirely from a single docker-compose.yml file.
+
+🧠 Concept Summary:
+
+Tier 1: Flask (Application Layer)
+
+Tier 2: MySQL (Data Layer)
+
+Communication via Docker internal DNS (mysql-db hostname).
+
+⚙️ Instructions / Specifications:
+
+1️⃣ Project Setup
+
+Clone the project repository from GitHub:
+
+git clone https://github.com/LondheShubham153/two-tier-flask-app.git
+cd two-tier-flask-app
+
+
+Folder Name → two-tier-flask-app
+
+Provided Files →
+
+app.py → Flask application connecting to MySQL
+
+Dockerfile → Instructions to build Flask image
+
+2️⃣ Service Details (docker-compose.yml)
+
+Flask Service:
+
+Container → flask-app
+
+Image → two-tier-backend
+
+Host Port → 8900, Container Port → 5000
+
+Environment Variables:
+
+MYSQL_HOST = mysql-db
+
+MYSQL_USER = root
+
+MYSQL_PASSWORD = my-secret-pw
+
+MYSQL_DB = devops
+
+Depends On → mysql-db
+
+Network → two-tier-network
+
+MySQL Service:
+
+Container → mysql-db
+
+Image → mysql:latest
+
+Environment Variables:
+
+MYSQL_ROOT_PASSWORD = my-secret-pw
+
+MYSQL_DATABASE = devops
+
+Volume → mysql_data:/var/lib/mysql
+
+Network → two-tier-network
+
+3️⃣ Network & Volume Configuration
+
+Create a user-defined network named two-tier-network.
+
+Create a named volume mysql_data for persistent MySQL storage.
+
+4️⃣ Execution Flow
+
+Build and run the complete application using Docker Compose.
+
+Both services (Flask + MySQL) must start together and connect automatically.
+
+Flask should be accessible on port 8900 via the browser.
+
+5️⃣ Verification
+
+Open your browser → Visit: http://localhost:8900
+
+The Flask web app should load successfully.
+
+Submit sample data via the app and confirm it is stored in the MySQL devops database.
+
+Ensure both containers (flask-app, mysql-db) are running and attached to two-tier-network.

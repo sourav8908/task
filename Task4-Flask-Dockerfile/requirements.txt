@@ -1,0 +1,5 @@
+•	Use the provided Flask app folder containing app.py.
+•	Create a Dockerfile that runs the app and exposes port 5000.
+•	Build the image and run the container.
+•	Open the browser — it should display: “Hello Docker Exam”.
+✅ Objective: Demonstrate image creation using a Python base image.

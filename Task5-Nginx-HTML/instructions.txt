@@ -1,0 +1,5 @@
+•	You are provided with a folder containing index.html.
+•	Create a Dockerfile using the Nginx image to serve this file.
+•	Run the container on port 5001.
+•	Visit in the browser to view your HTML content.
+✅ Objective: Build and serve static files using Nginx in Docker

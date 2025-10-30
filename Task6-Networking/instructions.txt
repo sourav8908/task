@@ -1,0 +1,10 @@
+•	Create a user-defined bridge network named my_network.
+•	Create two containers using the Alpine image:
+o	web1 and db1
+•	Attach both containers to my_network.
+•	From inside web1, install the ping tool (if needed) and ping db1.
+•	Verify successful communication between the two containers.
+•	Inspect the network to ensure both containers appear under my_network.
+✅ Expected Output:
+•	Successful ping results from db1.
+•	Network inspection showing both containers attached to my_network.
