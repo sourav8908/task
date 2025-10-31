@@ -1,8 +1,8 @@
 •	Pull the Ubuntu image.
 •	Run it in an interactive container named ubuntu-test.
 •	Inside the container, execute:
-o	cat /etc/os-release
 o	apt update
+and create a mytxt file write something and exit
 •	Exit the container and verify it appears in docker ps -a.
 •	Restart and attach to the same container again.
 •	Stop and remove the container.
